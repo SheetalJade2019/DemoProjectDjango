@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Django Todo</title>
+    <style media="screen">
+      .inp{
+          background-color: #0099ff;
+          color: black;
+          }
+      .display-3,.lead{
+          color: #003366;
+          }
+    </style>
+  </head>
+
+  <body>
+      <div class="container">
+          <div class="jumbotron">
+              <h2 class="display-3">Welcome To Todo Application</h2>
+              <p class="lead">Add your to do list here </p>
+              <hr class="my-2">
+
+              <ol>
+                {% for each_todo in all_item %}
+                    <li>{{each_todo.content}}
+                      <form class="" action="deleteTodo/{{each_todo.id}}/" method="post">
+                        {% csrf_token %}
+                        <input type="submit" class="inp" name="delete" value="delete">
+                      </form>
+                    </li>
+                {% endfor %}
+              </ol>
+
+              <form class="" action="addTodo/" method="post">
+                {% csrf_token %}
+                <input type="text" name="content" placeholder="enter task">
+                <input type="submit" class="inp" name="add" value="add">
+              </form>
+
+          </div>
+      </div>
+  </body>
+</html>
