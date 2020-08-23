@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     #'AppAuthSys',
     'AppToDo',
     #'AppSQLiteBasics',
+    'rest_framework',
+    'restdemo',
 ]
 
 MIDDLEWARE = [

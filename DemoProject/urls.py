@@ -24,5 +24,6 @@ urlpatterns = [
     #path('AppPoll/',include('AppPoll.urls')),
     path('AppToDo/',include('AppToDo.urls')),
     #path('AppSQLiteBasics/',include('AppSQLiteBasics.urls')),
+    path('restdemo/',include('restdemo.urls')),
     path('admin/', admin.site.urls),
 ]
